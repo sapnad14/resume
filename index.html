@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Sapna D— Senior UI/UX Designer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=Inter+Tight:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --ink: #1a1a1a;
+  --ink-soft: #3a3a3a;
+  --ink-mute: #6b6b6b;
+  --paper: #faf7f2;
+  --paper-2: #f3ede2;
+  --accent: #b3471a;
+  --accent-deep: #7a2e0d;
+  --rule: #d9cfbf;
+  --serif: "Fraunces", Georgia, serif;
+  --sans:  "Inter Tight", -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+*{ box-sizing:border-box; margin:0; padding:0; }
+
+html, body{
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 14.5px;
+  line-height: 1.55;
+  font-feature-settings: "ss01", "cv01";
+  -webkit-font-smoothing: antialiased;
+}
+
+.page{
+  width: 100%;
+  max-width: 820px;
+  margin: 24px auto;
+  background: var(--paper);
+  padding: 56px 64px 64px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ============ MASTHEAD ============ */
+.masthead{
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: end;
+  gap: 24px;
+  padding-bottom: 26px;
+  border-bottom: 1px solid var(--rule);
+  position: relative;
+}
+.masthead::after{
+  content: "";
+  position: absolute;
+  left: 0; right: 0; bottom: -1px;
+  height: 3px;
+  background: var(--accent);
+  width: 64px;
+}
+
+.name{
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 60px;
+  line-height: 0.95;
+  letter-spacing: -0.025em;
+  color: var(--ink);
+}
+.name .accent{ color: var(--accent); font-style: italic; font-weight: 500; }
+
+.role{
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 17px;
+  color: var(--ink-soft);
+  margin-top: 10px;
+  letter-spacing: 0.01em;
+}
+
+.exp-pill{
+  display: inline-block;
+  margin-top: 10px;
+  padding: 3px 10px;
+  border: 1px solid var(--accent);
+  border-radius: 100px;
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.contact{
+  text-align: right;
+  font-size: 12.5px;
+  color: var(--ink-soft);
+  line-height: 1.7;
+  font-variant-numeric: tabular-nums;
+}
+.contact a{
+  color: var(--ink-soft);
+  text-decoration: none;
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: 1px;
+  transition: all 0.2s ease;
+}
+.contact a:hover{ color: var(--accent); border-color: var(--accent); }
+.contact .label{
+  font-family: var(--serif);
+  font-style: italic;
+  color: var(--ink-mute);
+  margin-right: 4px;
+}
+
+/* ============ SECTIONS ============ */
+section{ margin-top: 28px; }
+
+.section-head{
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  margin-bottom: 14px;
+}
+.section-num{
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 14px;
+  color: var(--accent);
+  letter-spacing: 0.02em;
+}
+.section-title{
+  font-family: var(--sans);
+  font-weight: 600;
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+.section-rule{
+  flex: 1;
+  height: 1px;
+  background: var(--rule);
+}
+
+/* ============ SUMMARY ============ */
+.summary{
+  font-family: var(--serif);
+  font-size: 16.5px;
+  line-height: 1.55;
+  color: var(--ink);
+  font-weight: 400;
+  letter-spacing: -0.005em;
+  max-width: 96%;
+}
+.summary b{ font-weight: 600; }
+.summary .pull{
+  color: var(--accent);
+  font-style: italic;
+  font-weight: 500;
+}
+
+.summary-list{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 32px;
+  row-gap: 8px;
+}
+.summary-list li{
+  position: relative;
+  padding-left: 22px;
+  font-size: 13.5px;
+  line-height: 1.5;
+  color: var(--ink-soft);
+  font-family: var(--sans);
+}
+.summary-list li::before{
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 14px;
+  height: 1px;
+  background: var(--accent);
+}
+.summary-list li b{ font-weight: 600; color: var(--ink); }
+.summary-list li .pull{
+  color: var(--accent);
+  font-style: italic;
+  font-weight: 500;
+}
+
+/* ============ SKILLS GRID ============ */
+.skills-grid{
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  row-gap: 11px;
+  column-gap: 24px;
+  align-items: baseline;
+}
+.skill-label{
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 500;
+  font-size: 14px;
+  color: var(--accent);
+  letter-spacing: 0.005em;
+}
+.skill-value{
+  font-size: 13.5px;
+  color: var(--ink-soft);
+  line-height: 1.6;
+}
+.skill-value .strong{ color: var(--ink); font-weight: 500; }
+
+/* ============ EXPERIENCE ============ */
+.role-block{
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  gap: 24px;
+  padding: 16px 0;
+  border-top: 1px solid var(--rule);
+}
+.role-block:first-of-type{ border-top: none; padding-top: 4px; }
+.role-block.current{
+  background: linear-gradient(90deg, rgba(179,71,26,0.04), transparent 60%);
+  margin: 0 -16px;
+  padding: 16px 16px;
+  border-radius: 4px;
+  position: relative;
+}
+.role-block.current::before{
+  content: "CURRENT";
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  color: var(--accent);
+  background: var(--paper);
+  padding: 2px 7px;
+  border: 1px solid var(--accent);
+  border-radius: 100px;
+}
+.role-dates{
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 13px;
+  color: var(--ink-mute);
+  line-height: 1.5;
+  padding-top: 2px;
+}
+.role-body .role-title{
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 18px;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+}
+.role-body .role-co{
+  font-size: 13.5px;
+  color: var(--accent);
+  font-weight: 500;
+  margin-top: 3px;
+  letter-spacing: 0.005em;
+}
+.role-body .role-context{
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 12.5px;
+  color: var(--ink-mute);
+  margin-top: 3px;
+  margin-bottom: 9px;
+}
+.role-body ul{ list-style: none; padding: 0; margin: 0; }
+.role-body li{
+  position: relative;
+  padding-left: 18px;
+  margin: 6px 0;
+  font-size: 13px;
+  line-height: 1.55;
+  color: var(--ink-soft);
+}
+.role-body li::before{
+  content: "";
+  position: absolute;
+  left: 0; top: 0.6em;
+  width: 7px; height: 1px;
+  background: var(--accent);
+}
+.role-body li b{ color: var(--ink); font-weight: 600; }
+
+/* ============ PROJECTS ============ */
+.projects{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+.proj{
+  background: var(--paper-2);
+  border-radius: 6px;
+  padding: 14px 16px;
+  position: relative;
+}
+.proj h4{
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 14.5px;
+  color: var(--ink);
+  letter-spacing: -0.005em;
+  margin-bottom: 4px;
+}
+.proj .proj-tag{
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 11.5px;
+  color: var(--accent);
+  margin-bottom: 7px;
+}
+.proj p{ font-size: 12.5px; line-height: 1.5; color: var(--ink-soft); }
+
+/* ============ EDUCATION + ADDITIONAL ============ */
+.two-col{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 36px;
+}
+.edu-item{ margin-bottom: 12px; }
+.edu-item .edu-title{
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 14.5px;
+  color: var(--ink);
+}
+.edu-item .edu-sub{
+  font-size: 12.5px;
+  color: var(--ink-mute);
+  font-style: italic;
+  margin-top: 2px;
+}
+.edu-item .edu-note{
+  font-size: 12.5px;
+  color: var(--ink-soft);
+  margin-top: 4px;
+  line-height: 1.5;
+}
+
+.additional p{
+  font-size: 12.5px;
+  color: var(--ink-soft);
+  margin-bottom: 5px;
+  line-height: 1.5;
+}
+.additional .label{
+  font-family: var(--serif);
+  font-style: italic;
+  color: var(--accent);
+  margin-right: 4px;
+}
+
+/* ============ FOOTER ============ */
+.footer{
+  margin-top: 32px;
+  padding-top: 18px;
+  border-top: 1px solid var(--rule);
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-size: 11px;
+  color: var(--ink-mute);
+  letter-spacing: 0.05em;
+}
+.footer .stamp{
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 13px;
+  color: var(--accent);
+  letter-spacing: 0;
+}
+
+/* ============ PRINT ============ */
+@page{
+  size: A4;
+  margin: 6mm 11mm;
+}
+@media print{
+  html, body{ background: white; font-size: 8.5pt; line-height: 1.38; }
+  .page{
+    margin: 0;
+    padding: 0;
+    max-width: 100%;
+    width: 100%;
+    box-shadow: none;
+    background: white;
+  }
+  section{ margin-top: 10px; page-break-inside: auto; }
+  .role-block{ page-break-inside: avoid; padding: 8px 0; }
+  .role-block.current{ background: rgba(179,71,26,0.025); padding: 8px 12px; margin: 0 -12px; }
+  .role-block.current::before{ top: 9px; right: 12px; font-size: 7.5pt; padding: 1px 6px; }
+  .proj{ page-break-inside: avoid; padding: 9px 11px; }
+  .name{ font-size: 32pt; line-height: 0.9; }
+  .role{ font-size: 9.5pt; margin-top: 4px; }
+  .exp-pill{ font-size: 7.5pt; padding: 2px 7px; margin-top: 5px; }
+  .summary{ font-size: 10pt; line-height: 1.4; }
+  .summary-list{ column-gap: 22px; row-gap: 5px; }
+  .summary-list li{ font-size: 9pt; line-height: 1.35; padding-left: 16px; }
+  .summary-list li::before{ width: 10px; top: 0.5em; }
+  .masthead{ padding-bottom: 12px; }
+  .contact{ font-size: 8pt; line-height: 1.5; }
+  .section-head{ margin-bottom: 8px; }
+  .section-title{ font-size: 8.5pt; }
+  .skill-label{ font-size: 10pt; }
+  .skill-value{ font-size: 9pt; line-height: 1.4; }
+  .skills-grid{ row-gap: 6px; grid-template-columns: 110px 1fr; }
+  .role-body .role-title{ font-size: 11pt; }
+  .role-body .role-co{ font-size: 9pt; }
+  .role-body .role-context{ font-size: 8.5pt; margin-bottom: 4px; }
+  .role-body li{ font-size: 9pt; line-height: 1.35; margin: 2px 0; padding-left: 14px; }
+  .role-dates{ font-size: 8.5pt; }
+  .proj h4{ font-size: 10pt; }
+  .proj p{ font-size: 8.5pt; line-height: 1.3; }
+  .proj .proj-tag{ font-size: 8pt; margin-bottom: 3px; }
+  .projects{ gap: 10px; }
+  .edu-item{ margin-bottom: 8px; }
+  .edu-item .edu-title{ font-size: 10pt; }
+  .edu-item .edu-sub, .edu-item .edu-note{ font-size: 8.5pt; }
+  .additional p{ font-size: 8.5pt; margin-bottom: 3px; }
+  .two-col{ gap: 24px; }
+  .footer{ display: none; }
+}
+
+/* ============ MOBILE ============ */
+@media (max-width: 600px){
+  .page{ padding: 28px 22px; }
+  .masthead{ grid-template-columns: 1fr; }
+  .contact{ text-align: left; margin-top: 8px; }
+  .name{ font-size: 42px; }
+  .skills-grid{ grid-template-columns: 1fr; row-gap: 4px; }
+  .summary-list{ grid-template-columns: 1fr; }
+  .skill-label{ margin-top: 8px; }
+  .role-block{ grid-template-columns: 1fr; gap: 6px; }
+  .role-block.current{ margin: 0; }
+  .role-dates{ font-size: 12px; }
+  .projects{ grid-template-columns: 1fr; }
+  .two-col{ grid-template-columns: 1fr; gap: 20px; }
+}
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <header class="masthead">
+    <div>
+      <h1 class="name">Sapna <span class="accent">Devrath</span></h1>
+      <p class="role">Senior UI/UX Designer · Mobile App &amp; Product Design · Graphic + Video Editor</p>
+    </div>
+    <div class="contact">
+      <div><span class="label">based</span> Mohali · Chandigarh, India</div>
+      <div><span class="label">call</span> +91-XXXXXXXXX</div>
+      <div><span class="label">mail</span> <a href="mailto:sapnaxxxxxxxx@gmail.com"></a></div>
+      <div><span class="label">work</span> <a href="https://www.behance.net/sapnadevrath" target="_blank" rel="noopener">behance.net/sapnadevrath</a></div>
+      <div><span class="label">net</span> <a href="https://linkedin.com/in/sapna-ui-ux-desiger" target="_blank" rel="noopener">linkedin.com/in/sapna-ui-ux-desiger</a></div>
+    </div>
+  </header>
+
+  <section>
+    <div class="section-head">
+      <span class="section-num">01</span>
+      <span class="section-title">Profile</span>
+      <span class="section-rule"></span>
+    </div>
+    <ul class="summary-list">
+      <li><b>5+ years (5 yrs 8 mo)</b> as a UI/UX &amp; multi-disciplinary designer across <span class="pull">Fashion, IoT/SaaS, and IT services</span></li>
+      <li>Currently with <b>Paloma St James</b> in Atlanta, USA — designing the brand's web and mobile UI, social-media creatives, lookbooks, and short-form video reels</li>
+      <li>Shipped <b>12+ mobile app designs</b> end-to-end — wireframes, prototypes, and design hand-off in Figma</li>
+      <li>Daily-driver in Figma, Adobe Photoshop, Illustrator, XD, CorelDRAW, Canva, and Wondershare Filmora</li>
+      <li><span class="pull">Google UX-certified</span>; comfortable working async across IST and US time zones</li>
+      <li>Currently sharpening <b>design systems, motion design, and AI-assisted workflows</b> (Figma AI · Adobe Firefly)</li>
+      <li>Open to Senior UI/UX, Product Designer, and remote/global contract roles</li>
+    </ul>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <span class="section-num">02</span>
+      <span class="section-title">Toolkit</span>
+      <span class="section-rule"></span>
+    </div>
+    <div class="skills-grid">
+      <div class="skill-label">UI/UX</div>
+      <div class="skill-value"><span class="strong">Figma</span>, Adobe XD, Wireframing, Prototyping, User Flows, Information Architecture, Design Systems, Auto Layout &amp; Components, Responsive Design, Mobile-First, Usability Reviews, Accessibility (WCAG basics), Design Hand-off</div>
+
+      <div class="skill-label">Graphic</div>
+      <div class="skill-value"><span class="strong">Adobe Photoshop</span>, <span class="strong">Adobe Illustrator</span>, CorelDRAW, Canva — Logo &amp; Brand Identity, Lookbook Design, Social Media Creatives, Banners, Brochures, Catalogues, Visiting Cards, Icon Sets, Print-ready Collateral</div>
+
+      <div class="skill-label">Motion / Video</div>
+      <div class="skill-value"><span class="strong">Wondershare Filmora</span>, Adobe Premiere Pro (basics) — Instagram reels, TikTok shorts, product demos, animated banners, motion posters, micro-interactions</div>
+
+      <div class="skill-label">AI &amp; Emerging</div>
+      <div class="skill-value">Figma AI / Figma Make, Adobe Firefly, Prompt-to-mockup iteration, AI-assisted design workflows</div>
+
+      <div class="skill-label">Industries</div>
+      <div class="skill-value"><span class="strong">Fashion</span> · D2C / E-commerce · GPS / IoT SaaS · IT services · Digital agencies</div>
+
+      <div class="skill-label">Hand-off &amp; Collab</div>
+      <div class="skill-value">Zeplin, Marvel, InVision, FigJam, Miro, Notion — Cross-functional collaboration across <span class="strong">US + India teams</span>, stakeholder reviews, async time-zone coordination</div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <span class="section-num">03</span>
+      <span class="section-title">Experience</span>
+      <span class="section-rule"></span>
+    </div>
+
+    <article class="role-block current">
+      <div class="role-dates">Dec 2024<br>— Present</div>
+      <div class="role-body">
+        <h3 class="role-title">Graphics &amp; UI/UX Designer + Video Editor</h3>
+        <div class="role-co">Paloma St James · Atlanta, USA  ·  Full-time, Remote</div>
+        <div class="role-context">Fashion designer / D2C brand</div>
+        <ul>
+          <li>Sole designer for a US-based fashion brand — own the full visual pipeline from <b>UI/UX for the brand's web and mobile presence</b> through to social-media creatives, lookbook layouts, brand identity refreshes and short-form video reels.</li>
+          <li>Design and edit <b>short-form video creatives in Filmora</b> — Instagram reels, TikTok shorts, product demos and lookbook teasers — supporting weekly campaign drops.</li>
+          <li>Design <b>e-commerce and landing-page UI</b> in Figma — product pages, cart and checkout flows, look-of-the-day editorial layouts — with responsive breakpoints across mobile, tablet and desktop.</li>
+          <li>Maintain a <b>Figma component library</b> and brand-guideline document covering color tokens, typography, button states and editorial layout grids — keeping web, social and print assets visually consistent.</li>
+          <li>Operate across <b>IST and US Eastern time zones</b> — daily async hand-offs in English with the founder and US-based collaborators; proven ability to ship independently.</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="role-block">
+      <div class="role-dates">Aug 2023<br>— Dec 2024</div>
+      <div class="role-body">
+        <h3 class="role-title">Graphics &amp; UI/UX Designer</h3>
+        <div class="role-co">Blackbox GPS Technology Pvt. Ltd. · Chandigarh  ·  Full-time, On-site</div>
+        <div class="role-context">GPS / IoT vehicle-tracking SaaS</div>
+        <ul>
+          <li>Designed end-to-end UI/UX for <b>multiple mobile apps in Figma</b> — driver dashboards, live vehicle-tracking, geo-fence alerts, trip history and admin panels — with reusable components and auto-layout discipline.</li>
+          <li>Owned the <b>daily social-media creative pipeline</b> across LinkedIn, Instagram and Facebook — produced 150+ posts, motion banners and short-form reels in Filmora.</li>
+          <li>Built and maintained a <b>Figma component library</b> of buttons, forms, navigation patterns and color/typography tokens — reused across web and mobile teams.</li>
+          <li>Designed responsive web interfaces and landing pages in Photoshop and Figma; collaborated with developers on pixel-perfect implementation and design reviews.</li>
+          <li>Produced print-ready collateral — brochures, catalogues, visiting cards and event banners — keeping brand consistency from screen to press.</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="role-block">
+      <div class="role-dates">May 2022<br>— Jul 2023</div>
+      <div class="role-body">
+        <h3 class="role-title">Graphic Designer</h3>
+        <div class="role-co">BrainCave Software Pvt. Ltd. · Kolkata  ·  Full-time, Remote</div>
+        <div class="role-context">IT services for global clients</div>
+        <ul>
+          <li>Delivered UI/UX for <b>8+ client mobile apps</b> in Figma and Adobe XD — wireframes, high-fidelity mockups, clickable prototypes and Zeplin / Figma Dev-mode hand-off.</li>
+          <li>Designed website templates and landing pages for clients across e-commerce, education and services — handled responsive breakpoints for mobile, tablet and desktop.</li>
+          <li>Created <b>logo and brand-identity systems</b> for 10+ small-business clients, including logo, color palette, typography and full brand-guideline documents.</li>
+          <li>Produced PowerPoint pitch decks, icon sets, vector illustrations and infographics that supported client sales presentations.</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="role-block">
+      <div class="role-dates">Oct 2020<br>— Apr 2022</div>
+      <div class="role-body">
+        <h3 class="role-title">Graphic Designer</h3>
+        <div class="role-co">W3ctrl Services · Delhi  ·  Full-time, Remote</div>
+        <div class="role-context">Digital agency · branding, web, social</div>
+        <ul>
+          <li>Designed digital banners, social-media creatives and email-marketing graphics — supporting 5+ client accounts on rapid turnarounds.</li>
+          <li>Translated rough sketches and creative briefs into pixel-perfect web banners, infographics and editable Photoshop / Illustrator templates.</li>
+          <li>Worked closely with the marketing team on campaign visuals, brand guidelines and print collateral.</li>
+        </ul>
+      </div>
+    </article>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <span class="section-num">04</span>
+      <span class="section-title">Selected Work</span>
+      <span class="section-rule"></span>
+    </div>
+    <div class="projects">
+      <div class="proj">
+        <h4>Fashion E-commerce &amp; Social Pipeline</h4>
+        <div class="proj-tag">Paloma St James · Web · Reels</div>
+        <p>Full visual system for a US fashion brand — web UI, lookbook layouts, weekly Instagram / TikTok reels (Filmora), and printable collateral with a cohesive editorial-fashion aesthetic.</p>
+      </div>
+      <div class="proj">
+        <h4>GPS Vehicle-Tracking App</h4>
+        <div class="proj-tag">Blackbox GPS · Multi-role</div>
+        <p>End-to-end Figma design across driver, fleet-manager and admin roles — live tracking, geo-fence alerts, trip history and reporting. 60+ screens, shared component library.</p>
+      </div>
+      <div class="proj">
+        <h4>E-commerce App Redesign</h4>
+        <div class="proj-tag">Mobile · Conversion focus</div>
+        <p>Redesigned product, cart and checkout flows in Figma; cleaner card system and clearer CTAs. Client team reported improved checkout completion in user testing.</p>
+      </div>
+      <div class="proj">
+        <h4>Brand Identity &amp; Print Systems</h4>
+        <div class="proj-tag">Multi-client · CorelDRAW · Illustrator</div>
+        <p>Logo, color and typography systems with reusable Canva / Figma templates plus print collateral — managed press hand-off, color profiles and bleed/trim discipline.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="two-col">
+
+      <div>
+        <div class="section-head">
+          <span class="section-num">05</span>
+          <span class="section-title">Education &amp; Certs</span>
+          <span class="section-rule"></span>
+        </div>
+        <div class="edu-item">
+          <div class="edu-title">Google UX Design Professional Certificate</div>
+          <div class="edu-sub">Coursera (Google) · Certified</div>
+          <div class="edu-note">Empathise, define, ideate, wireframe, prototype, test — Figma case studies.</div>
+        </div>
+        <div class="edu-item">
+          <div class="edu-title">M.Sc. Mathematics &amp; Computer Science</div>
+          <div class="edu-sub">MGS University, Rajasthan · 2015</div>
+        </div>
+      </div>
+
+      <div class="additional">
+        <div class="section-head">
+          <span class="section-num">06</span>
+          <span class="section-title">Additional</span>
+          <span class="section-rule"></span>
+        </div>
+        <p><span class="label">languages</span> English (professional — daily async work with US team), Hindi (native)</p>
+        <p><span class="label">platforms</span> Windows, macOS, Linux</p>
+        <p><span class="label">currently learning</span> Adobe Premiere Pro, Webflow, Figma AI / Make, motion design (Rive · Lottie)</p>
+        <p><span class="label">availability</span> Open to remote, hybrid &amp; US/global contracts · IST + US time-zone overlap</p>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="footer">
+    <div>SAPNA D · SENIOR UI/UX DESIGNER · 2026</div>
+    <div class="stamp">— let's design something good together —</div>
+  </div>
+
+</div>
+
+</body>
+</html>
